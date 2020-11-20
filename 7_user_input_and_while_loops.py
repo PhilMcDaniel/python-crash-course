@@ -20,3 +20,30 @@ print(age)
 
 #convert input to int
 print(int(age)>21)
+
+
+height = input("How tall are you in inches? ")
+height = int(height)
+
+print(height)
+
+if height >= 48:
+    print("\nYou're tall enough to ride!")
+else:
+    print("You'll be able to ride when you get taller")
+
+#modulo = remainder of division num % denom
+#when 0 returned, then the numbers are divisible
+4%3
+6%2
+
+number = input("Enter a number and I'll tell you if it's even or odd: ")
+number = int(number)
+
+if number % 2 == 0:
+    print(f"\nThe number {number} is even")
+else:
+    print(f"\nThe number {number} is odd")
+
+
+#while loops

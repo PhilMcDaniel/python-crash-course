@@ -57,4 +57,32 @@ prompt += "\nEnter 'quit' to end the program"
 message = ""
 while message != "quit":
         message = input(prompt)
+        #This is added so that the word quit is not printed out when it is the message value from input
+        if(message != 'quit'):
+            print(message)
+
+#using a flag to accomplish the same thing
+prompt = "\nTell me something, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program"
+active = True
+while active:
+    message = input(prompt)
+    if message == 'quit':
+        active = False
+    else:
         print(message)
+
+
+#using break to exit
+
+prompt = "\nEnter a city that you have visted:"
+prompt += "\n(Enter 'quit' to finish.)"
+
+while True:
+    city = input(prompt)
+    if city == 'quit':
+        break
+    else:
+        print(f"I'd love to go to {city.title()}!")
+
+#using continue to go back to beginning of loop logic

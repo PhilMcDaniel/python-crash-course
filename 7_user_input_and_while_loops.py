@@ -86,3 +86,53 @@ while True:
         print(f"I'd love to go to {city.title()}!")
 
 # using continue to go back to beginning of loop logic
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 ==0:
+        continue
+    print(current_number)
+
+
+x = 1
+while x <= 5:
+    print(x)
+    x+=1
+
+#while loops with lists and dicts
+unconfirmed_users = ['alice','brian','candace']
+confirmed_users = []
+#verify each user until all are confirmed
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+    print(f"Verifying user: {current_user.title()}")
+    confirmed_users.append(current_user)
+
+#display confirmed users
+print("\nThe following users have been confirmed:")
+for user in confirmed_users:
+    print(user.title())
+
+
+#removing specific values from list
+pets = ['dog','cat','dog','goldfish','cat','rabbit','cat']
+print(pets)
+while 'cat' in pets:
+    pets.remove('cat')
+print(pets)
+
+#filling a dictionary
+responses = {}
+polling_active = True
+while polling_active:
+    name = input("\nWhat is your name:")
+    response = input("Which mountaing would you like to climb? ")
+    #store
+    responses[name] = response
+    repeat = input("Would you like to let another user respond? (yes/no)")
+    if repeat == 'no':
+        polling_active = False
+
+print("\n--- Poll Results ---")
+for name, response in responses.items():
+    print(f"{name} would like to climb {response}.")

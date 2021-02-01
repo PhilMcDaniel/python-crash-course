@@ -77,3 +77,63 @@ musician = build_person('jimi','hendrix')
 print(musician)
 musician = build_person('jimi','hendrix',age=27)
 print(musician)
+
+#using function with while loop
+def get_formatted_name(first,last,middle=''):
+    """Return a full name, neatly formatted."""
+    if middle:
+        full_name = f"{first} {middle} {last}"
+    else:
+        full_name = f"{first} {last}"
+    return full_name.title()
+
+while True:
+    print(f"\nPlease tell me your name:")
+    print("(enter 'q' at any time to quit)")
+    f_name = input("First name: ")
+    if f_name =='q':
+        break
+    l_name = input("Last name: ")
+    if l_name == 'q':
+        break
+
+    formatted_name = get_formatted_name(f_name,l_name)
+    print(f"\nHello, {formatted_name}")
+
+
+#passing a list
+
+def greet_users(names):
+    """print a simple greeting to each user in a list"""
+    for name in names:
+        msg = f"Hello {name.title()}"
+        print(msg)
+
+usernames = ['hannah','ty','margot']
+greet_users(usernames)
+
+#modifying a list using a function
+unprinted_designs = ['phone case','robot pendant','dodecahedron']
+completed_models = []
+
+def print_models(unprinted_designs,completed_models):
+    """
+    Simulate printing each design until none are left.
+    Move to completed_models after printing.
+    """
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model {current_design}")
+        completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+    """Show all models that were printed"""
+    for completed_model in completed_models:
+        print(completed_model)
+
+print_models(unprinted_designs,completed_models)
+show_completed_models(completed_models)
+
+#preventing a function from modifying a list
+#[:] makes a copy of the list to send to the function
+funtion_name(list_name[:])

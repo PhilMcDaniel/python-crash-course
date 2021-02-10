@@ -137,3 +137,29 @@ show_completed_models(completed_models)
 #preventing a function from modifying a list
 #[:] makes a copy of the list to send to the function
 funtion_name(list_name[:])
+
+print_models(unprinted_designs[:],completed_models)
+
+#passing arbitrary number of arguments to function
+#* is the keyword
+def make_pizza(*toppings):
+    """Summarize what we are about to make"""
+    print("\nMaking a pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza('pepperoni')
+make_pizza('sausage','cheese','mushroom','greenpeppers')
+
+#mixing positional and arbitrary number of args
+def make_pizza(size,*toppings):
+    """Summarize what we are about to make"""
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza(16,'pepperoni')
+make_pizza(12,'sausage','cheese','mushroom','greenpeppers')
+
+
+#arbitrary keyword arguments

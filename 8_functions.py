@@ -163,3 +163,73 @@ make_pizza(12,'sausage','cheese','mushroom','greenpeppers')
 
 
 #arbitrary keyword arguments
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested."""
+    print(toppings)
+#result is a tuple
+make_pizza('pepperoni')
+make_pizza('sausage','cheese','mushroom','greenpeppers')
+
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested."""
+    print("\nMaking pizza with the following toppings:")
+    for topping in toppings:
+        print(f" - {topping}")
+
+make_pizza('pepperoni')
+make_pizza('sausage','cheese','mushroom','greenpeppers')
+
+#mixing positional and arbitrary
+# arbitrary needs to be last param
+# often see *args as generic name for arbitrary positional arguments
+def make_pizza(size,*toppings):
+    """summarize the pizza"""
+    print(f"\nMaking a {size}-inch pizza with the following toppings")
+    for topping in toppings:
+        print(f" - {topping}")
+
+make_pizza(12,'pepperoni')
+make_pizza(16,'pepperoni','cheese','green pep')
+
+
+#using arbitrary keyword arguments
+#**kwargs used for non-specific keyword arguments
+# double asterisk causes python to create empty dict and fill with arguments passed
+def build_profile(first,last, **user_info):
+    """Build a dict containing everything we know about user"""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+
+user_profile = build_profile('albert','einstein',location='princeton',field='physics')
+print(user_profile)
+
+
+#storing functions in modules
+#module_name.function_name()
+import pizza
+pizza.make_pizza(16,'pepperoni')
+pizza.make_pizza(16,'mushrooms','green peppers','extra cheese')
+
+#import specific function
+#from module_name import function_name
+#from module_name import function_name_0,function_name_1,function_name2
+
+#use "as" to alias function
+#from module_name import function_name as fn
+from pizza import make_pizza as mp
+mp(16,'pepperoni')
+mp(16,'mushrooms','green peppers','extra cheese')
+
+#us "as" to alias module
+#import module_name as mn
+import pizza as p
+
+#import all functions ni a module
+from pizza import *
+#from module_name import *
+
+#styling functions
+#functions should have descriptive names
+#add comment to explain what the function does
+#don't use space when assigning default values

@@ -277,3 +277,23 @@ my_tesla.battery.get_range()
 
 #importing classes
 #from file/module import class as alias
+#from file/module import class1, class2, classn ...
+#from file/modeule (will need to use dot notation to access specific classes)
+
+#can do nested importing of dependent classses
+
+
+#python standard lib
+from random import randint
+randint(1,6)
+
+from random import choice
+players = ['charles','martina','michael','florence','eli']
+first=choice(players)
+print(first)
+
+
+#styling classes
+#class names in CamelCase
+#always include docstring """ class expl """
+#import from standard lib first, leave blank line, import custom modules

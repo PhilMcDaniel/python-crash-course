@@ -8,9 +8,15 @@ class NamesTestCase(unittest.TestCase):
     def test_first_last_name(self):
         """Do names like 'Janis Joplin' work?"""
         #run method from imported file
-        formatted_name = testing_your_code.get_formatted_name('janis','b','joplin')
+        formatted_name = testing_your_code.get_formatted_name('janis','joplin')
         #compare result of method exuction with expected result
         self.assertEqual(formatted_name,'Janis Joplin')
+    
+    def test_first_last_middle_name(self):
+        """Do names like Wolfgang Amadeus Mozart work?"""
+        formatted_name = testing_your_code.get_formatted_name('wolfgang','mozart','amadeus')
+        self.assertEqual(formatted_name,'Wolfgang Amadeus Mozart')
 
 if __name__ == '__main__':
     unittest.main()
+    

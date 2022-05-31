@@ -1,6 +1,7 @@
 class Settings:
     """A class to store all settings for Alien Invasion game."""
-
+#resources
+#https://github.com/ehmatthes/pcc_2e/
     def __init__(self):
         """Initialize the game's settings."""
         #screen settings
